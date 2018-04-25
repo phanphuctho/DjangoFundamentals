@@ -1,0 +1,2 @@
+python manage.py showmigrations: watch mirgrate status
+python manage.py migrate: init migrate default app
