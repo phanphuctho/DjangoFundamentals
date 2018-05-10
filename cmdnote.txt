@@ -1,2 +1,24 @@
+python manage.py runserver
+
 python manage.py showmigrations: watch mirgrate status
-python manage.py migrate: init migrate default app
+
+python manage.py migrate: init migrate default app,  which is responsible for applying and unapplying migrations.
+python manage.py startapp your_app_label : tao project
+python manage.py startapp gameplay
+
+python manage.py makemigrations
+python manage.py makemigrations your_app_label
+
+python manage.py sqlmigrate your_app_label your_migrate_label (0001_initial.py => 0001)
+python manage.py sqlmigrate gameplay 0001
+
+python manage.py createsuperuser
+
+//user project
+ppt
+ABC123456
+Alice Zxc123456
+Bob Zxc123456
+
+=====
+python manage.py shell
