@@ -36,7 +36,7 @@ class Game(models.Model):
     status = models.CharField(max_length=1, default='F',
                               choices=GAME_STATUS_CHOICES)
 
-    object = GameQuerySet.as_manager()
+    objects = GameQuerySet.as_manager()
 
     def __str__(self):
         return "{0} vs {1}".format(self.first_player, self.second_player)

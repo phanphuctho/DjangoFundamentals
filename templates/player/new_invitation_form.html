@@ -1,19 +1,15 @@
-{#{% extends "base.html" %}#}
 {% load crispy_forms_tags %}
+
 {% block title %}
-    Login
+    New invitation
 {% endblock %}
 
 {% block content %}
     <form role="form"
-          action="{% url 'player_login' %}"
+          action="{% url 'player_new_invitation' %}"
           method="post">
         {% csrf_token %}
-
-        <p>Please login.</p>
-
         {{ form | crispy}}
-
-        <button type="submit" class="btn btn-success">Sign in</button>
+        <button type="submit">Send new invitation</button>
     </form>
 {% endblock %}

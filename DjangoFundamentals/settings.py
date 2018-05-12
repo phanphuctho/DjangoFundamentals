@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gameplay',
-    'player'
+    'player',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+#login Forms and Authentication sau login vao trang da cai
+LOGIN_REDIRECT_URL="player_home"
+LOGOUT_REDIRECT_URL="DjangoFundamentals_welcome"
+LOGIN_URL="player_login"
+CRISPY_TEMPLATE_PACK='bootstrap3'
