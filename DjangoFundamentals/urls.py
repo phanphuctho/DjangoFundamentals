@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^player/', include('player.urls')),
     # url(r'^welcome$', welcome), # path('welcome', welcome) tuong duong
-    url(r'^$', welcome, name="DjangoFundamentals_welcome")
+    url(r'^$', welcome, name="DjangoFundamentals_welcome"),
+    url(r'^games/', include('gameplay.urls'))
 ]

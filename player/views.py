@@ -1,6 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+from django.contrib.auth.forms import UserCreationForm
+# from django.core.urlresolvers import reverse_lazy
 
 from gameplay.models import Game
 from .forms import InvitationForm
@@ -25,6 +29,7 @@ def home(request):
     my_games = Game.objects.game_for_user(request.user)
     active_games = my_games.active()
     invitations = request.user.invitations_received.all()
+    finished_game = my_games.difference(active_games)
 
     return render(request, "player/home.html",
                   {'games': active_games,
@@ -59,3 +64,8 @@ def accept_invitation(request, id):
         return render(request,
                       "player/accept_invitation_form.html",
                       {"invitation": invitation})
+
+class SignUpView(CreateView):
+    form_class = UserCreationForm
+    template_name = "player/signup_form.html"
+    success_url = reverse_lazy('player_home')
